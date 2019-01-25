@@ -1,0 +1,8 @@
+@mixin font2($fam,$col,$size){
+font-family:$fam;
+color:$col;
+font-size:$size;
+}
+
+.font2{@include font2("Syltaen,serif",black,1px)}
+

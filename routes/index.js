@@ -5,28 +5,31 @@ var ls=require("ls")
 var db=require("dblo")
 // glob
 var par,iarr=[],typblo,path="public/img/*"
+var head,dev
+
+var getHead=function(req, res, next) {
+head=req.headers["user-agent"]
+    dev=req.device
+
+next()}
 
 var reaImg=function(req, res, next) {
 
 for (var i of ls(path)){
-console.log(i.full)
+    //console.log(i.full)
 iarr.push(i.full)
-//console.log(i)
+
 }
 
 console.log(iarr)
-// var fil="public/img/8304.jpg"
-// fs.readFile(fil,"utf8", function(err,dat) {
-// if (err) {return console.log(err); }
-// console.log(dat)
-// })
-
 par=req.params.id
 next()}
 
 
 var chk=function(req, res, next) {
-console.log(par)
+console.log(head)
+console.log(dev)
+
 next()}
 
 // get
@@ -40,7 +43,7 @@ iarr:iarr
 });
 }
 
-router.get('/', [reaImg,chk,gcb])
+router.get('/', [getHead,chk,gcb])
 // post
 
 

@@ -4,3 +4,5 @@ echo $1
 echo css/$se1.css
 
 sass $1 css/$se1.css
+
+rm css/*.map
