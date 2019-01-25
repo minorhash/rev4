@@ -1,3 +1,3 @@
-convert -resize 1600x \
+convert -resize 1920x \
     -density 72 \
-$1 $1.png
+$1 $1.jpg
