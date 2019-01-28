@@ -46,8 +46,11 @@ color:white;
 
 /* footer */
 
-.foot1{
+.foot{
 font-family:'Syltaen',serif;
+position:fixed;
+bottom:0;
+width:100%;
 }
 
 /*index*/
