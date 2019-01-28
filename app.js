@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var i18n = require('i18n-express');
 //var session = require('express-session');
-var sess = require('cookie-session');
+//var sess = require('cookie-session');
 
 var app = express();
 
@@ -18,13 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 
-app.use(
-  sess({
-    name: 'sess',
-    keys: ['key1'],
-    maxAge: 24 * 60 * 1000, // 1 hour
-  })
-);
+
 // app.use(session({
 //   secret: 'secret',
 //   resave: false,

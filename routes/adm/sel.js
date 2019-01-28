@@ -8,11 +8,7 @@ var ses,bod,usr,mail
 
 var getUsr = function(req, res, next) {
 
-    bod=req.body
-    if(req.session){
-ses=req.session
-mail=ses.mail
-    }else{console.log("no ses")}
+bod=req.body
 
 // try{ db.selUsr}
 
@@ -20,6 +16,7 @@ next()};
 
 var chk= function(req, res, next) {
     console.log(bod)
+    console.log(ses)
 next()};
 
 var gcb = function(req, res) {
