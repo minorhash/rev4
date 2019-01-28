@@ -5,20 +5,47 @@ var chk=function(req, res, next) {
 
 next()}
 
-// post
+// in
 
-var pcb= function(req, res, next) {
+var cb= function(req, res, next) {
 var par=req.params.id
-console.log(par)
 var bod=req.body
-console.log(bod)
 
-res.render("pre", {
+res.render("pre/in", {
 title: par,
 par:par,
 bod:bod
 });
 }
-router.get('/pre', [chk,pcb])
+
+router.get('/pre/in', [chk,cb])
+
+//in2
+var cb= function(req, res, next) {
+var par=req.params.id
+var bod=req.body
+
+res.render("pre/in2", {
+title: par,
+par:par,
+bod:bod
+});
+}
+
+router.post('/pre/in2', [chk,cb])
+
+// in3
+var cb= function(req, res, next) {
+var par=req.params.id
+var bod=req.body
+
+res.render("pre/in3", {
+title: par,
+par:par,
+bod:bod
+});
+}
+
+router.post('/pre/in3', [chk,cb])
 
 module.exports = router;

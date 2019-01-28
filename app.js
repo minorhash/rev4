@@ -48,12 +48,9 @@ var indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 var page= require('./routes/page');
 app.use('/', page);
-
 var pre= require('./routes/pre');
 app.use('/', pre);
 
-var pre2= require('./routes/pre2');
-app.use('/', pre2);
 
 app.use(function(req, res, next) {
 next(createError(404));
