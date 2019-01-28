@@ -21,6 +21,11 @@ bod:bod
 router.get('/pre/in', [chk,cb])
 
 //in2
+
+var inPre=function(req, res, next) {
+
+next()}
+
 var cb= function(req, res, next) {
 var par=req.params.id
 var bod=req.body
