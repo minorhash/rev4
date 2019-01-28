@@ -1,19 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var db=require("roblo")
+var bod,name,pss,mail,item
 
 var chk=function(req, res, next) {
-
+bod=req.body
 next()}
 
 // in
 
 var cb= function(req, res, next) {
-var par=req.params.id
-var bod=req.body
 
 res.render("pre/in", {
-title: par,
-par:par,
 bod:bod
 });
 }
@@ -21,32 +19,45 @@ bod:bod
 router.get('/pre/in', [chk,cb])
 
 //in2
-
-var inPre=function(req, res, next) {
-
+var chk=function(req, res, next) {
+bod=req.body
 next()}
 
+var inPre=function(req, res, next) {
+console.log(bod.name)
+
+try{
+    db.inPre(bod.name,bod.mail,bod.pss,bod.item)}
+    catch(err){console.log(err)}
+
+next()}
+var chk=function(req, res, next) {
+
+bod=req.body
+console.log(bod)
+next()}
+
+
 var cb= function(req, res, next) {
-var par=req.params.id
-var bod=req.body
 
 res.render("pre/in2", {
-title: par,
-par:par,
 bod:bod
 });
 }
 
-router.post('/pre/in2', [chk,cb])
+router.post('/pre/in2', [chk,inPre,cb])
 
 // in3
+var chk=function(req, res, next) {
+
+bod=req.body
+console.log(bod)
+next()}
+
 var cb= function(req, res, next) {
-var par=req.params.id
-var bod=req.body
+bod=req.body
 
 res.render("pre/in3", {
-title: par,
-par:par,
 bod:bod
 });
 }
