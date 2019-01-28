@@ -4,7 +4,8 @@ var fs=require("fs")
 var ls=require("ls")
 var db=require("dblo")
 // glob
-var par,iarr=[],typblo,path="public/img/*"
+var par
+    var iarr=[],typblo,path="public/img/*"
 
 var reaImg=function(req, res, next) {
 
@@ -21,9 +22,12 @@ console.log(iarr)
 // console.log(dat)
 // })
 
-par=req.params.id
 next()}
 
+var getPar=function(req, res, next) {
+par=req.params.id
+
+next()}
 
 var chk=function(req, res, next) {
 console.log(par)
@@ -34,13 +38,12 @@ var gcb= function(req, res, next) {
 
 res.render("index", {
 title: par,
-par:par,
-iarr:iarr
+par:par
 
 });
 }
 
-router.get('/', [reaImg,chk,gcb])
+router.get('/', [getPar,chk,gcb])
 // post
 
 

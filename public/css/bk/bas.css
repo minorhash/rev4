@@ -11,15 +11,12 @@ background-color:yellow;
 
 }
 
-.navbar-collapse  {
-  color: white;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
+
+/* navber */
+
 .navbar a {
   color: white;
-  padding: 14px 20px;
+  padding: 0px 0px;
   text-decoration: none;
   text-align: center;
 }
@@ -30,7 +27,7 @@ background-color:yellow;
 }
 
 .nav-item{
-font-size:14px;
+font-size:16px;
 font-family:'Syltaen',serif;
 color:white;
 }
@@ -46,13 +43,36 @@ font-family:'Syltaen',serif;
 color:white;
 }
 
-.navbar-toggler-icon {
-background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
+
 /* footer */
 
 .foot1{
 font-family:'Syltaen',serif;
+}
+
+/*index*/
+
+.style1 {
+        font-size:16px;
+	padding-bottom: 5px;
+        font-family:'Syltaen',serif;
+	border-bottom: thin dotted rgba(0,0,0,0.39);
+        width:100%
+	padding-top: 5px;
+        margin-left:10px;
+	box-sizing: border-box;
+        
+}
+
+
+.img1{
+    background-image:url("../img/main2.jpg");
+    background-color:red;
+    background-repeat:no-repeat;
+    background-size:cover;
+    width:1600px;
+    height:900px;
+    position:relative;
 }
 
 

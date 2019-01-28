@@ -4,73 +4,29 @@ data-interval="2000">
 
 <div class="carousel-item active">
 <div class="row">
+<% for(var i=0;i<3;i++){ %>
 <div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[0].replace(/public\//,"") %>" alt="" width="400">
+<img class="d-block img-fluid" src="<%= iarr[i].replace(/public\//,"") %>" alt="" width="400">
 </div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[1].replace(/public\//,"") %>" alt="" width="400">
-</div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[2].replace(/public\//,"") %>" alt="" width="400">
-</div>
+<% } %>
+
 </div>
 </div>
 
-<div class="carousel-item">
-<div class="row">
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[1].replace(/public\//,"") %>" alt="" width="400">
-</div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[2].replace(/public\//,"") %>" alt="" width="400">
-</div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[3].replace(/public\//,"") %>" alt="" width="400">
-</div>
-</div>
-</div>
 
+<% for(var k=1;k<4;k++){ %>
 <div class="carousel-item">
 <div class="row">
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[2].replace(/public\//,"") %>" alt="" width="400">
-</div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[3].replace(/public\//,"") %>" alt="" width="400">
-</div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[4].replace(/public\//,"") %>" alt="" width="400">
-</div>
-</div>
-</div>
 
-<div class="carousel-item">
-<div class="row">
+<% for(var i=k;i<k+3;i++){ %>
 <div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[3].replace(/public\//,"") %>" alt="" width="400">
+<img class="d-block img-fluid" src="<%= iarr[i].replace(/public\//,"") %>" alt="" width="400">
 </div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[4].replace(/public\//,"") %>" alt="" width="400">
-</div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[5].replace(/public\//,"") %>" alt="" width="400">
+<% } %>
 </div>
 </div>
-</div>
+<% } %>
 
-<div class="carousel-item">
-<div class="row">
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[4].replace(/public\//,"") %>" alt="" width="400">
-</div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[5].replace(/public\//,"") %>" alt="" width="400">
-</div>
-<div class="col-sm">
-<img class="d-block img-fluid" src="<%= iarr[6].replace(/public\//,"") %>" alt="" width="400">
-</div>
-</div>
-</div>
 
 <div class="carousel-item">
 <div class="row">

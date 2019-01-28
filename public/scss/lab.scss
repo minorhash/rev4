@@ -1,7 +1,0 @@
-@mixin lab($bkg: "blue", $col: rgba(0,255,0, 0.5)) {
-position: relative;
-background-color: $bkg;
-color: $col;
-}
-
-.lab { @include lab("red","orange")}

@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var i18n = require('i18n-express');
 
 var app = express();
 
@@ -15,6 +16,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(i18n({
+  translationsPath: path.join(__dirname, 'i18n'),
+  siteLangs: ["en","ja"],
+  textsVarName: 'trans'
+}));
+
+// i18n ======================================
+var nat=["news","prof","disc","sch","vid","mail"]
+
+for(let i=0;i<nat.length;i++){
+app.use(  i18n({    translationsPath: path.join(__dirname, 'i18n/'+nat[i]),
+    siteLangs: ['en', 'ja'],    textsVarName: nat[i]  })
+);
+}
+
+//route
 var indexRouter = require('./routes/index');
 var page= require('./routes/page');
 
