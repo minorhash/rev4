@@ -2,43 +2,39 @@ var express = require("express")
 var router = express.Router()
 // == db =============================
 var db = require("roblo")
-var bod,usr
+var ses,bod,usr,mail
 
 // === get ============================
 
 var getUsr = function(req, res, next) {
 
-    bod=req.body
-    usr=bod.name
-    pss=bod.pss
+bod=req.body
 
-if (bod.mail=="jinjasaisen@gmail.com"
-&& bod.pss=="chug"){
-usr="d1nesh"
-}
-
+// try{ db.selUsr}
 
 next()};
 
-var allPre= function(req, res, next) {
-    try{
-allpre=db.allPre()}catch(err){console.log(err)}
-next()};
+var clrCoo = function(req, res, next) {
+    usr=null;
+  req.session = null;
+  res.clearCookie('session');
+  res.clearCookie('sess');
+  res.clearCookie('coo');
 
+  next()};
 
 var chk= function(req, res, next) {
     console.log(bod)
+    console.log(ses)
 next()};
 
 var gcb = function(req, res) {
-    var obj = { usr: usr,
-allpre:allpre
-    }
-    res.render("adm/sel2", obj);
+var obj = { usr: usr}
+    res.render("adm/out", obj);
 };
 
 
-router.post("/adm/sel2", [getUsr,allPre,
+router.post("/adm/out", [getUsr,clrCoo,
 chk, gcb])
 
 module.exports = router

@@ -54,7 +54,7 @@ var pre= require('./routes/pre');
 app.use('/', pre);
 
 // adm
-var aadm=["sel","sel2"]
+var aadm=["sel","sel2","out"]
 
 for(var i=0;i<aadm.length;i++){
 aadm[i]=require('./routes/adm/'+aadm[i]);

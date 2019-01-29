@@ -78,15 +78,11 @@ width:100%;
     position:relative;
 }
 
-#gra{
-
-    background-color:gray;
-}
-#red{
-
-    background-color:red;
-}
-#pin{
-
-    background-color:pink;
-}
+#gra{    background-color:gray;}
+#red{    background-color:red;}
+#pin{    background-color:pink;}
+#yell {    background-color:pink;}
+#tea{    background-color:teal;}
+#sil{    background-color:cornsilk;}
+#ivo{    background-color:ivory;}
+#moc{    background-color:moccasin;}
