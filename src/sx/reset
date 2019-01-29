@@ -1,0 +1,7 @@
+var element = React.createElement(
+  'h3',
+  null,
+  'Hello, world'
+);
+var doc = document.getElementById('hell');
+ReactDOM.render(element, doc);

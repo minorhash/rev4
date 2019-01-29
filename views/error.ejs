@@ -1,9 +1,9 @@
-<%include par/head %>
+<%include base/head %>
 <%include nav/nav %>
 <div class="container-fluid">
     <!-- row -->
 <div class="row">
-    <%include par/1sid%>
+    <%include base/1sid%>
 <div class="col-10" style="background-color:cornsilk">
 
 <h1><%= message %></h1>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="row">
-    <%include par/1sid%>
+    <%include base/1sid%>
 
 <h2><%= error.status %></h2>
 <pre><%= error.stack %></pre>
@@ -20,5 +20,5 @@
 
 </div></div>
 
-<%include par/foot%>
+<%include base/foot%>
 
