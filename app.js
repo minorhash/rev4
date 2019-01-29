@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var i18n = require('i18n-express');
-var session = require('express-session');
+//var session = require('express-session');
+//var sess = require('cookie-session');
 
 var app = express();
 
@@ -17,16 +18,17 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 
-app.use(session({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: false,
-  cookie:{
-  httpOnly: true,
-  secure: false,
-  maxage: 1000 * 60 * 30
-  }
-}));
+
+// app.use(session({
+//   secret: 'secret',
+//   resave: false,
+//   saveUninitialized: false,
+//   cookie:{
+//   httpOnly: true,
+//   secure: false,
+//   maxage: 1000 * 60 * 30
+//   }
+// }));
 
 app.use(i18n({
   translationsPath: path.join(__dirname, 'i18n'),
@@ -48,12 +50,16 @@ var indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 var page= require('./routes/page');
 app.use('/', page);
-
 var pre= require('./routes/pre');
 app.use('/', pre);
 
-var pre2= require('./routes/pre2');
-app.use('/', pre2);
+// adm
+var aadm=["sel","sel2"]
+
+for(var i=0;i<aadm.length;i++){
+aadm[i]=require('./routes/adm/'+aadm[i]);
+app.use('/', aadm[i]);
+}
 
 app.use(function(req, res, next) {
 next(createError(404));

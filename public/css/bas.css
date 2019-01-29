@@ -78,4 +78,15 @@ width:100%;
     position:relative;
 }
 
+#gra{
 
+    background-color:gray;
+}
+#red{
+
+    background-color:red;
+}
+#pin{
+
+    background-color:pink;
+}
