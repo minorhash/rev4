@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 var db=require("roblo")
 var bod,name,pss,mail,item
+var allmer
+
+var allMer=function(req, res, next) {
+try{allmer=db.allMer()}
+catch(err){console.log(err)}
+next()}
 
 var chk=function(req, res, next) {
 bod=req.body
@@ -12,16 +18,17 @@ next()}
 var cb= function(req, res, next) {
 
 res.render("pre/in", {
-bod:bod
+bod:bod,allmer:allmer
 });
 }
 
-router.get('/pre/in', [chk,cb])
+router.get('/pre/in',[allMer,chk,cb])
 
 //in2
 var chk=function(req, res, next) {
 bod=req.body
 next()}
+
 
 var inPre=function(req, res, next) {
 console.log("== in pre")

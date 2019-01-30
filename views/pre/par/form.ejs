@@ -11,8 +11,9 @@
         <div class="form-group">
         <label for="item" >商品</label>
 <select class="form-control" id="sel1" name="item">
-    <option>555</option>
-    <option>666</option>
+    <% for (var i=1;i<allmer.length;i++){ %>
+    <option><%= allmer[i].name %></option>
+    <% } %>
 </select>
 
         </div> 
