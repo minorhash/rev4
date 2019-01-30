@@ -53,7 +53,7 @@ bod:bod
 });
 }
 
-router.post('/pre/in2', [chk,inPre,cb])
+router.post('/pre/in2', [chk,cb])
 
 // in3
 var chk=function(req, res, next) {
@@ -70,6 +70,6 @@ bod:bod
 });
 }
 
-router.post('/pre/in3', [chk,cb])
+router.post('/pre/in3', [inPre,chk,cb])
 
 module.exports = router;
