@@ -7,8 +7,23 @@ var ses,bod,usr,mail
 // === get ============================
 
 var getUsr = function(req, res, next) {
-
+ses=req.session
 bod=req.body
+
+if(bod=={}){
+
+console.log("== bod!!!")
+console.log(bod)
+    flg=bod.flg
+    id=bod.rowid
+       //try{    }catch{}
+}else{
+console.log("==no bod")
+console.log(bod)
+flg=bod.flg
+    id=bod.rowid
+}
+
 
 // try{ db.selUsr}
 
@@ -40,7 +55,7 @@ res.render("adm/can", obj);
 };
 
 
-router.post("/adm/can", [getUsr,
+router.post("/adm/can", [getUsr,upFlg,
 chk, gcb])
 
 module.exports = router

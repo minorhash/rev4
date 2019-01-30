@@ -2,11 +2,12 @@ var express = require("express")
 var router = express.Router()
 // == db =============================
 var db = require("roblo")
-var bod,usr
+var bod,usr,ses
 
 // === get ============================
-
 var getUsr = function(req, res, next) {
+
+ses=req.session
 
     bod=req.body
     usr=bod.name
@@ -15,7 +16,8 @@ var getUsr = function(req, res, next) {
 if (bod.mail=="adm@mail.com"
 && bod.pss=="chug"){
 usr="d1nesh"
-}else {console.log("== no much")}
+ses.usr=usr
+}else {console.log("== no match")}
 
 
 next()};
@@ -27,13 +29,15 @@ next()};
 
 
 var chk= function(req, res, next) {
-    console.log(bod)
+console.log(bod)
+console.log(ses.usr)
+console.log(allpre)
 next()};
 
 var gcb = function(req, res) {
-    var obj = { usr: usr,
+var obj = { usr: usr,
 allpre:allpre
-    }
+}
     res.render("adm/sel2", obj);
 };
 

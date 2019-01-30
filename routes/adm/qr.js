@@ -35,11 +35,11 @@ next()};
 
 var gcb = function(req, res) {
 var obj = { usr: usr}
-    res.render("adm/out", obj);
+res.render("adm/qr", obj);
 };
 
 
-router.post("/adm/out", [getUsr,clrCoo,
+router.get("/adm/qr", [getUsr,
 chk, gcb])
 
 module.exports = router

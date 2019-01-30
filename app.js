@@ -4,8 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var i18n = require('i18n-express');
-//var session = require('express-session');
-//var sess = require('cookie-session');
 
 var app = express();
 
@@ -18,7 +16,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 
+var sess = require('cookie-session');
+app.use(
+sess({
+    name: 'sess',
+    keys: ['key1'],
+    maxAge: 24 * 60 * 1000, // 1 hour
+})
+);
 
+//var session = require('express-session');
 // app.use(session({
 //   secret: 'secret',
 //   resave: false,
@@ -54,7 +61,7 @@ var pre= require('./routes/pre');
 app.use('/', pre);
 
 // adm
-var aadm=["sel","sel2","out","can"]
+var aadm=["sel","sel2","out","can","qr"]
 
 for(var i=0;i<aadm.length;i++){
 aadm[i]=require('./routes/adm/'+aadm[i]);

@@ -7,19 +7,34 @@ var ses,bod,usr,mail
 // === get ============================
 
 var getUsr = function(req, res, next) {
-
+ses=req.session
 bod=req.body
-    if(bod){
-console.log("bod!!!")
-    }else{console.log("no bod")}
+
+if(ses){
+usr=ses.usr
+}else{
+console.log("ses!!!")}
+
+if(bod!=={}){
+console.log("no bod")
+}else{
+console.log("bod!!!")}
 
 // try{ db.selUsr}
 
 next()};
 
+var allPre= function(req, res, next) {
+try{
+allpre=db.allPre()}catch(err){console.log(err)}
+next()};
+
 var chk= function(req, res, next) {
+    console.log("== bod")
     console.log(bod)
     console.log(ses)
+    console.log(usr)
+    console.log(allpre)
 next()};
 
 var gcb = function(req, res) {
@@ -28,7 +43,7 @@ var obj = { usr: usr}
 };
 
 
-router.get("/adm/sel", [getUsr,
+router.get("/adm/sel", [getUsr,allPre,
 chk, gcb])
 
 module.exports = router
