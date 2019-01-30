@@ -24,13 +24,21 @@ bod=req.body
 next()}
 
 var inPre=function(req, res, next) {
+console.log("== in pre")
 console.log(bod.name)
 
+    if(bod.name){
 try{
     db.inPre(bod.name,bod.item,bod.unit,0)}
     catch(err){console.log(err)}
+    }else{
+        console.log("name is empty")
+        res.redirect("/pre/in")
+    }
 
 next()}
+
+
 var chk=function(req, res, next) {
 
 bod=req.body

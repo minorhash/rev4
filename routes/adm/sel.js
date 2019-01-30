@@ -10,27 +10,35 @@ var getUsr = function(req, res, next) {
 ses=req.session
 bod=req.body
 
-if(ses){
-usr=ses.usr
-}else{
-console.log("ses!!!")}
+var emp=require("./js/emp")
 
-if(bod!=={}){
+if(emp(ses)==true){
+console.log("no ses!!!")
+
+if(emp(bod)==true){
 console.log("no bod")
+usr=null
 }else{
-console.log("bod!!!")}
+console.log("bod!!!")
+if(bod.email=="adm@mail.com" && bod.pss=="chug"){
+usr="d1nesh"
+}
+}
 
-// try{ db.selUsr}
+}else{
+console.log("ses!!!")
+usr=ses.usr
+}
 
 next()};
 
 var allPre= function(req, res, next) {
-try{
-allpre=db.allPre()}catch(err){console.log(err)}
+    try{allpre=db.allPre()}
+    catch(err){console.log(err)}
 next()};
 
 var chk= function(req, res, next) {
-    console.log("== bod")
+    console.log("== sel ==")
     console.log(bod)
     console.log(ses)
     console.log(usr)
