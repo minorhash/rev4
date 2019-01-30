@@ -18,7 +18,7 @@
     <% if(usr) {%>
 
     <% for (var i=0;i<allpre.length;i++){ %>
-    <table class="table">
+    <table class="table table-striped">
     <% if(allpre[i].flg==0) {%>
         <tr><td>
     名前:<%= allpre[i].name %>
@@ -35,7 +35,7 @@
 <form method="post" action="/adm/can">
 <input type="hidden" name="rowid" value="<%= allpre[i].rowid %>">
 <input type="hidden" name="flg" value="1">
-<button class="btn btn-info" type="submit">キャンセル</button>
+<button class="btn btn-info" type="submit"></button>
 </form>
 </td></tr>
 

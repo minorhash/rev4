@@ -9,8 +9,23 @@ var ses,bod,usr,mail
 var getUsr = function(req, res, next) {
 ses=req.session
 bod=req.body
+var emp=require("./js/emp")
+if(emp(ses)==false){
+usr=ses.usr
+}else{
+console.log("no ses")
+if(bod !==undefined){
+if(bod.mail=="adm@mail.com" && bod.pss=="chug"){
+usr="d1nesh"
+ses.usr=usr
+}else{
+console.log("no match")
+}
 
-
+}else{
+console.log("no bod")
+}
+}
 
 // try{ db.selUsr}
 
