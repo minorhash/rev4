@@ -3,15 +3,13 @@
   </div><!-- head -->
       <div class="card-body">
           name: <%= bod.name %><br>
-          pss: <%= bod.pss %><br>
-          mail: <%= bod.mail %><br>
           item: <%= bod.item %><br>
+          unit: <%= bod.unit %><br>
 
 <form method="post" action="/pre/in3">
     <input type="hidden" name="name" value="<%= bod.name %>">
-    <input type="hidden" name="mail" value="<%= bod.mail %>">
-    <input type="hidden" name="pss" value="<%= bod.pss %>">
     <input type="hidden" name="item" value="<%= bod.item %>">
+    <input type="hidden" name="unit" value="<%= bod.unit %>">
     <button type="submit" class="btn btn-info">submit</button>
 </form>
 

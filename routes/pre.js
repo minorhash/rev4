@@ -27,7 +27,7 @@ var inPre=function(req, res, next) {
 console.log(bod.name)
 
 try{
-    db.inPre(bod.name,bod.mail,bod.pss,bod.item)}
+    db.inPre(bod.name,bod.item,bod.unit,0)}
     catch(err){console.log(err)}
 
 next()}

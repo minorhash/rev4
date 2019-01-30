@@ -7,7 +7,7 @@
 <div class="container-fluid">
 <div class="row">
 
-    <div class="col-md-2" style="color:black" id="moc"><br>
+<div class="col-md-2" style="color:black" id="moc"><br>
 
 <% include par/left %>
 
@@ -18,18 +18,28 @@
     <% if(usr) {%>
 
     <% for (var i=0;i<allpre.length;i++){ %>
-
-    <div class="card ">
-    <div class="card card-header">
-    name:<%= allpre[i].name %></div>
-
-    <div class="card-body ">
+    <table class="table">
+        <tr><td>
+    名前:<%= allpre[i].name %>
+            </td><td>
     sku:tms-<%= allpre[i].item %>
-    num:<%= allpre[i].num %>
-    </div>
+            </td><td>
 
-    </div>
+    数量:<%= allpre[i].unit%>
+
+            </td><td>
+
+    注文id:<%= allpre[i].rowid%>
+            </td><td>
+                <form method="post" action="/adm/can">
+                    <input type="hidden" name="flg" value="1">
+<button class="btn btn-info" type="submit">キャンセル</button>
+                </form>
+            </td></tr>
+
     <% } %>
+    </table>
+
     <% } else { %>
 please log in.
 

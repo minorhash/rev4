@@ -12,16 +12,16 @@ var getUsr = function(req, res, next) {
     usr=bod.name
     pss=bod.pss
 
-if (bod.mail=="jinjasaisen@gmail.com"
+if (bod.mail=="adm@mail.com"
 && bod.pss=="chug"){
 usr="d1nesh"
-}
+}else {console.log("== no much")}
 
 
 next()};
 
 var allPre= function(req, res, next) {
-    try{
+try{
 allpre=db.allPre()}catch(err){console.log(err)}
 next()};
 

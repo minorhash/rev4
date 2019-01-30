@@ -9,11 +9,23 @@ var ses,bod,usr,mail
 var getUsr = function(req, res, next) {
 
 bod=req.body
-    if(bod){
-console.log("bod!!!")
-    }else{console.log("no bod")}
 
 // try{ db.selUsr}
+
+next()};
+
+var clrCoo = function(req, res, next) {
+    usr=null;
+  req.session = null;
+  res.clearCookie('session');
+  res.clearCookie('sess');
+  res.clearCookie('coo');
+
+  next()};
+
+var upFlg= function(req, res, next) {
+
+try{db.upFlg(flg,id)}catch(err){console.log(err)}
 
 next()};
 
@@ -24,11 +36,11 @@ next()};
 
 var gcb = function(req, res) {
 var obj = { usr: usr}
-    res.render("adm/sel", obj);
+res.render("adm/can", obj);
 };
 
 
-router.get("/adm/sel", [getUsr,
+router.post("/adm/can", [getUsr,
 chk, gcb])
 
 module.exports = router
