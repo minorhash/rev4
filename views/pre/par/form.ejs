@@ -10,8 +10,9 @@
 
         <div class="form-group">
         <label for="item" >商品</label>
+        <%= allmer.length %>
 <select class="form-control" id="sel1" name="item">
-    <% for (var i=1;i<allmer.length;i++){ %>
+    <% for (var i=0;i<allmer.length;i++){ %>
     <option><%= allmer[i].name %></option>
     <% } %>
 </select>
