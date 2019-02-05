@@ -10,11 +10,11 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(logger('dev'));
 
 var sess = require('cookie-session');
 app.use(
@@ -61,15 +61,37 @@ var pre= require('./routes/pre');
 app.use('/', pre);
 
 // adm
-var aadm=["sel","sel2","out","can","qr"]
+var aadm=["index","sel","sel2","out","can","qr"]
 
 for(var i=0;i<aadm.length;i++){
 aadm[i]=require('./routes/adm/'+aadm[i]);
 app.use('/', aadm[i]);
 }
 
+// shop =================================
+
+// var shop = require('./routes/shop/index');
+// app.use('/', shop);
+
+var top=["index","cart","item","his","my","dl","up","tmp"]
+for(var i=0;i<top.length;i++){
+top[i]=require('./routes/shop/'+top[i]);
+app.use('/', top[i]);
+}
+// top.forEach(function(ite){
+// ite=require('./routes/shop/'+ite)
+// app.use('/', ite)
+// })
+
+
+// err =================================
+
 app.use(function(req, res, next) {
 next(createError(404));
+});
+
+app.use(function(req, res, next) {
+next(createError(500));
 });
 
 app.use(function(err, req, res, next) {

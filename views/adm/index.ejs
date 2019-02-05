@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<% include par/head %>
+<% include par/nav %>
+<body>
+
+<div class="container-fluid">
+<div class="row">
+
+<div class="col-md-2" style="color:black" id="moc"><br>
+
+<% include par/left %>
+
+</div><!-- col2-->
+
+<div class="col-md-10" style="color:black" id="sil">
+    <br>
+    <% if(usr) {%>
+
+    <% for (var i=0;i<allpre.length;i++){ %>
+    <table class="table table-striped" id="siz24">
+    <% if(allpre[i].flg==0) {%>
+        <tr><td>
+    名前:<%= allpre[i].name %>
+            </td><td>
+    sku:tms-<%= allpre[i].item %>
+            </td><td>
+
+    数量:<%= allpre[i].unit%>
+
+</td><td>
+
+注文id:<%= allpre[i].rowid%>
+</td><td>
+<form method="post" action="/adm/can">
+<input type="hidden" name="rowid" value="<%= allpre[i].rowid %>">
+<input type="hidden" name="flg" value="1">
+<button class="btn btn-info" type="submit">受取り</button>
+</form>
+</td></tr>
+
+<% }else { %>
+<p id="siz24">
+<span class="badge badge-danger">
+注文id:<%= allpre[i].rowid%> </span>は受取済みです。
+</p>
+    <% } %>
+    </table>
+
+    <% } %>
+    <% } else { %>
+please log in.
+
+    <% } %>
+</div><!-- col10-->
+
+
+</div><!--row-->
+</div><!-- /container -->
+</body>
+

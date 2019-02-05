@@ -78,20 +78,33 @@ width:100%;
     position:relative;
 }
 
+#bei{    background-color:beige;}
 #gra{    background-color:gray;}
 #red{    background-color:red;}
 #pin{    background-color:pink;}
-#yell {    background-color:pink;}
 #tea{    background-color:teal;}
 #sil{    background-color:cornsilk;}
 #ivo{    background-color:ivory;}
 #moc{    background-color:moccasin;}
 #sea{    background-color:seashell;}
+#yell {    background-color:pink;}
 
 #bk{background-color:white;
 color:black;
 }
 
-#siz1{ font-size:24px;}
+#siz16{ font-size:16px;}
 #siz24{ font-size:24px;}
 #siz36{ font-size:36px;}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+  background-color:tomato;
+}
+

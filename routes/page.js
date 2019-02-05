@@ -11,7 +11,7 @@ next()}
 var pcb= function(req, res, next) {
 console.log(par)
 var bod=req.body
-console.log(bod)
+    //console.log(bod)
 
 res.render("page", {
 par: par,

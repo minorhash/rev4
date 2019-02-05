@@ -1,10 +1,14 @@
-      <div class="card" id="siz1">
-      <div class="card-header">
-  </div><!-- head -->
-      <div class="card-body">
-          name: <%= bod.name %><br>
-          item: <%= bod.item %><br>
-          unit: <%= bod.unit %><br>
+<div class="card" id="siz1">
+<div class="card-header">
+以下の内容で受付いたしました。
+</div><!-- head -->
+<div class="card-body">
+お名前: <%= bod.name %><br>
+Email: <%= bod.mail %><br>
+イベント名: <%= bod.item %><br>
+単価: <%= pri.toLocaleString() %>円<br>
+枚数: <%= bod.unit %><br>
+合計金額:<%= (pri*bod.unit).toLocaleString() %>円
 
   </div>  <!-- body -->
   </div>  <!-- card -->

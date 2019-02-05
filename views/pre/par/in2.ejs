@@ -1,13 +1,18 @@
-      <div class="card">
-      <div class="card-header">
-  </div><!-- head -->
-      <div class="card-body">
-          name: <%= bod.name %><br>
-          item: <%= bod.item %><br>
-          unit: <%= bod.unit %><br>
+<div class="card">
+<div class="card-header">
+<span id="siz24" class="badge badge-warning">この内容でよろしいですか?</span>
+</div><!-- head -->
+<div class="card-body">
+お名前: <%= bod.name %><br>
+Email: <%= bod.mail %><br>
+イベント名: <%= bod.item %><br>
+単価: <%= pri.toLocaleString() %>円<br>
+枚数: <%= bod.unit %><br>
+合計金額:<%= (pri*bod.unit).toLocaleString() %>円
 
 <form method="post" action="/pre/in3">
     <input type="hidden" name="name" value="<%= bod.name %>">
+    <input type="hidden" name="mail" value="<%= bod.mail %>">
     <input type="hidden" name="item" value="<%= bod.item %>">
     <input type="hidden" name="unit" value="<%= bod.unit %>">
     <button type="submit" class="btn btn-info">submit</button>
