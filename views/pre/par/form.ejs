@@ -18,6 +18,18 @@
 <label for="item" >商品</label>
 <select class="form-control" id="item" name="item">
 <% for(var i=0;i<2;i++){ %>
+=======
+    <form method="post" action="/pre/in2" onsubmit="return checkform(this)">
+        <div class="form-group">
+        <label for="name" >名前</label>
+    <input class="form-control" type="text" name="name" value="<%= bod.name %>">
+        </div>
+
+        <div class="form-group">
+        <label for="item" >商品</label>
+        <%= allmer.length %>
+<select class="form-control" id="sel1" name="item">
+    <% for (var i=0;i<allmer.length;i++){ %>
     <option><%= allmer[i].name %></option>
 <% } %>
 </select>
