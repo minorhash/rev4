@@ -22,7 +22,6 @@ next()}
 // in
 
 var cb= function(req, res, next) {
-
 res.render("pre", {
     par:par,
     bod:bod,

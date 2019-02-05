@@ -1,0 +1,23 @@
+      <div class="card">
+      <div class="card-header">
+  </div><!-- head -->
+      <div class="card-body">
+    <form name="for1" method="post" action="/pre/in2" onsubmit="emp()">
+
+<div class="form-group">
+<label for="name" >名前</label>
+<% if(bod) { %>
+<input id="name" class="form-control" type="text" name="name" value="<%= bod.name %>">
+<% } else { %>
+<input id="name" class="form-control" type="text" name="name" value="bod">
+<% }  %>
+</div><!-- name-->
+  <button type="submit" class="btn btn-info">submit</button>
+
+</form>
+
+<script src="../js/emp.js"></script>
+
+
+  </div>  <!-- body -->
+  </div>  <!-- card -->
