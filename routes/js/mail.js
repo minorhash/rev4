@@ -7,17 +7,17 @@ var name,mail,item,unit
 
 var senEma=function(name,mail,sku,unit){
 var selmer=db.skuMer(sku)
-var sub="この度はご予約ありがとうございます。<br>"
+var sub="rev:robeイベント予約受付 "
 
+var tx0="この度はご予約ありがとうございます。"
     var tx1="以下の通り、ご予約を承りましたので、ご案内申し上げます。<br>"
     var tx2="このメールは、お客様のご予約に関する大切なメールです。<br>"
     var tx3="イベントが終了するまで保存してください。<br>"
     var ln1="-------------------------------------------------<br>"
     var ev1="[ ご予約内容 ]<br>"
-    var ev2="イベント名："+selmer.name+"<br>"
+    var ev2="イベント名：「"+selmer.name+"」<br>"
     var ev3="会場名:"+selmer.des+"<br>"
-    var ev4="日程:"+selmer.dat+"<br>"
-    var ev5="枚数:"+unit+"<br>"
+    var ev5="枚数:"+unit+"枚<br>"
     var ev6="単価:"+(selmer.pri).toLocaleString()+"yen<br>"
     var ev7="合計:"+(selmer.pri*unit).toLocaleString()+"yen<br>"
     var ln1="--------------------------------------------------<br>"
@@ -34,7 +34,7 @@ var sub="この度はご予約ありがとうございます。<br>"
     var add3="info@tmsmusic.tokyo"
 
     var mes=name+"さま<br><br>"+sub+tx1+tx2+tx3+ln1
-        +ev1+ev2+ev3+ev4+ev5+ev6+ev7+ln1
+        +ev1+ev2+ev3+ev5+ev6+ev7+ln1
         +not1+not2+not3+not4+ln1
         +not5+not6+ln1
     +add1+add2+add3
