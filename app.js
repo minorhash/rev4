@@ -10,11 +10,11 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
 
 var sess = require('cookie-session');
 app.use(
@@ -61,7 +61,7 @@ var pre= require('./routes/pre');
 app.use('/', pre);
 
 // adm
-var aadm=["index","sel","sel2","out","can","qr"]
+var aadm=["index","sel","sel2","out","can","qr","usr"]
 
 for(var i=0;i<aadm.length;i++){
 aadm[i]=require('./routes/adm/'+aadm[i]);
@@ -82,7 +82,6 @@ app.use('/', top[i]);
 // ite=require('./routes/shop/'+ite)
 // app.use('/', ite)
 // })
-
 
 // err =================================
 
