@@ -1,0 +1,33 @@
+<% if(usr) {%>
+
+<table class="table table-striped" id="siz24">
+    <% for (var i=0;i<allpre.length;i++){ %>
+<tr><td>
+名前:<%= allpre[i].name %>
+</td><td>
+Email:<%= allpre[i].mail %>
+</td><td>
+
+sku:<%= allpre[i].item %>
+</td><td>
+単価:<%= skumer[i].pri.toLocaleString() %>円
+</td><td>
+
+数量:<%= allpre[i].unit%>
+</td><td>
+
+合計:<%= (skumer[i].pri*allpre[i].unit).toLocaleString() %>円
+</td><td>
+
+注文id:<%= allpre[i].rowid%>
+</td></tr>
+
+
+    <% } %>
+
+    </table>
+    <% } else { %>
+please log in.
+
+    <% } %>
+

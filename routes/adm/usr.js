@@ -3,7 +3,7 @@ var router = express.Router()
 // == db =============================
 var db = require("roblo")
 var ses,bod,usr,mail
-var sku,asku=[]
+var sku,asku=[],skumer=[]
 
 // === get ============================
 
@@ -45,23 +45,24 @@ catch(err){console.log(err)}
 next()};
 
 var skuMer= function(req, res, next) {
+for(var i=0;i<asku.length;i++ ){
+skumer[i]=db.skuMer(asku[i])
+}
 
 next()};
 
 var chk= function(req, res, next) {
-    console.log("== sel ==")
-    console.log(bod)
-    console.log(ses)
-    console.log(asku)
+console.log("== sel ==")
+console.log(bod)
+console.log(ses)
 next()};
 
 var gcb = function(req, res) {
-var obj = { usr: usr}
-    res.render("adm/usr", obj);
+var obj = { usr: usr,allpre:allpre,skumer}
+res.render("adm/usr", obj);
 };
 
-
-router.get("/adm/usr", [getUsr,allPre,
+router.get("/adm/usr", [getUsr,allPre,skuMer,
 chk, gcb])
 
 module.exports = router

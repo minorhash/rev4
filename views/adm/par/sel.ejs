@@ -1,0 +1,38 @@
+<% if(usr) { %>
+
+<table class="table table-striped" id="siz24">
+<% for (var i=0;i<allpre.length;i++) { %>
+<% if(allpre[i].flg==0) { %>
+<tr><td>
+名前:<%= allpre[i].name %>
+</td><td>
+sku:<%= allpre[i].item %>
+</td><td>
+数量:<%= allpre[i].unit%>枚
+</td><td>
+金額:<%= (allpre[i].unit*skumer[i].pri).toLocaleString() %>
+</td><td>
+注文id:<%= allpre[i].rowid%>
+</td><td>
+
+<form method="post" action="/adm/can">
+<input type="hidden" name="rowid" value="<%= allpre[i].rowid %>">
+<input type="hidden" name="flg" value="1">
+<button class="btn btn-info" type="submit">受取り</button>
+</form>
+</td></tr>
+
+<% } else { %>
+<p id="siz24">
+<span class="badge badge-danger">
+注文id:<%= allpre[i].rowid%> </span>は受取済みです。
+</p>
+    <% } %>
+    <% } %>
+
+    </table>
+    <% } else { %>
+please log in.
+    <% } %>
+
+
