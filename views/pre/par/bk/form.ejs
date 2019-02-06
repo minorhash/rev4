@@ -2,21 +2,31 @@
       <div class="card-header">
   </div><!-- head -->
       <div class="card-body">
-
     <form name="for1" method="post" action="/pre/in2" onsubmit="emp()">
 
 <div class="form-group">
 <label for="name" >名前</label>
-<input id="name" class="form-control" type="text" name="name" >
+<input id="name" class="form-control" type="text" name="name" value="<%= bod.name %>">
 </div><!-- name-->
 
 <div class="form-group">
 <label for="mail" >Email</label>
-<input id="mail" class="form-control" type="email" name="mail">
+<input id="mail" class="form-control" type="email" name="mail" value="<%= bod.mail %>">
 </div><!-- name-->
 
 <div class="form-group">
 <label for="item" >商品</label>
+<select class="form-control" id="item" name="item">
+<% for(var i=0;i<2;i++){ %>
+    <form method="post" action="/pre/in2" onsubmit="return checkform(this)">
+        <div class="form-group">
+        <label for="name" >名前</label>
+    <input class="form-control" type="text" name="name" value="<%= bod.name %>">
+        </div>
+
+        <div class="form-group">
+        <label for="item" >商品</label>
+        <%= allmer.length %>
 <select class="form-control" id="sel1" name="item">
     <% for (var i=0;i<allmer.length;i++){ %>
     <option><%= allmer[i].name %></option>
