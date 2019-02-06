@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
-<%include par/head %>
-<%include par/2nav%>
-
+<%include base/head %>
 <body>
+<%include nav/2nav%>
+<img class="img-fluid" src="img/main2.jpg" width="1600" >
 
 <div class="container-fluid">
-<!-- row -->
 <div class="row">
+<div class="col-lg-12">
 
-<div class="col" style="background-color:white">
-<div class="card">
+    <% include par/news %>
+  
+</div><!--col12-->
+</div><!-- row end -->
 
-<div class="card-body" align="center">
-  </div>
+</div><!--container-->
 
-   </div>
-   </div>
-
-<!-- row end -->
-</div>
-  </body>
+<div class="footer"><% include base/foot %></div>
+</body>
 </html>
