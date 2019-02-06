@@ -67,7 +67,7 @@ font-family:'Syltaen',serif;
 
 .img1{
     background-image:url("../img/main2.jpg");
-    background-color:white;
+    background-color:red;
     background-repeat:no-repeat;
     background-size:cover;
     width:1600px;
@@ -75,53 +75,4 @@ font-family:'Syltaen',serif;
     position:relative;
 }
 
-.no-gut{
-padding-left:0;
-padding-right:0;
 
-margin:0;
-padding:0;
-}
-.no-gut > .col,
-.no-gut > [class*="col-"] {
-padding-left:0;
-padding-right:0;
-
-margin:0;
-padding:0;
-}
-
-
-
-/*info*/
-
-.title4 {
-	font-size: 20px;
-	color: #000000;
-	font-weight: bold;
-	border-bottom: thin dotted rgba(0,0,0,0.39);
-	margin-bottom: 10px;
-}
-
-.style2 {
-	text-align:left;
-    padding-bottom: 10px;
-	border: medium solid rgba(0,0,0,0.10);
-    font-size:14px;
-    font-family:'Syltaen',serif;
-    width:100%;
-    padding-top: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	box-sizing: border-box;
-	margin-bottom: 10px;
-}
-
-
-.foot2 {
-	text-align: right;
-	border-top: thin dotted rgba(0,0,0,0.39);
-	margin-top: 10px;
-}
